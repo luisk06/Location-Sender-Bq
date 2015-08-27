@@ -3,17 +3,17 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.leanlocation.staffing"
+        id        = "com.leanlocationbq.staffingbq"
         version   = "1.0.0">
 
-    <name>Location Sender 2 - Local</name>
+    <name>Location Sender Bq</name>
 
     <description>
-       App to send location and username to server
+       App to send location and calculate data.
     </description>
 
 
-    <author href="http://leanstaffing.com" email="lean@leanstaffing.com">
+    <author href="http://leanstaffing.com" email="barranquilla@leanstaffing.com">
         Development Team
     </author>
 
