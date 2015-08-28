@@ -251,8 +251,8 @@
            function load_details(ix){
 				   location.href = "#page2";
 				   //alert($('#latitude').val());
-                    var latitude_driver = parseFloat(11.003630);//parseFloat($('#latitude').val());//37.55;
-                    var longitude_driver = parseFloat(-74.805074);//parseFloat($('#longitude').val());//-77.44;
+                    var latitude_driver = parseFloat($('#latitude').val());//37.55;
+                    var longitude_driver = parseFloat($('#longitude').val());//-77.44;
 		    		var id_driver = $('#user_name').val();
                         $.ajax({
                             type: 'POST',
