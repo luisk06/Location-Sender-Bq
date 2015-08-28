@@ -186,7 +186,7 @@
                         $.ajax({
                             type: 'POST',
                             data: {user_lat: lati, user_long: longi, user_name: name},
-                            url: 'http://leanstaffing.com/testserver/save.php',
+                            url: 'http://leanstaffing.com/testserver/save2.php',
                             success: function(data){
                                 console.log(data);
                                // alert('Your location was successfully added');
@@ -229,8 +229,8 @@
 												     send_to_db(x,y);
 											 	  }
 											 	   function onError(error) {
-												        alert('code: '    + error.code    + '\n' +
-												              'message: ' + error.message + '\n');
+												     /*   alert('code: '    + error.code    + '\n' +
+												              'message: ' + error.message + '\n');*/
 														//send_to_db();
 												    }
 											 },20000);
@@ -251,8 +251,8 @@
            function load_details(ix){
 				   location.href = "#page2";
 				   //alert($('#latitude').val());
-                    var latitude_driver = parseFloat($('#latitude').val());//37.55;
-                    var longitude_driver = parseFloat($('#longitude').val());//-77.44;
+                    var latitude_driver = parseFloat(11.003630);//parseFloat($('#latitude').val());//37.55;
+                    var longitude_driver = parseFloat(-74.805074);//parseFloat($('#longitude').val());//-77.44;
 		    		var id_driver = $('#user_name').val();
                         $.ajax({
                             type: 'POST',
@@ -302,7 +302,7 @@
 					  var map = new google.maps.Map(document.getElementById('map'), {
 						//center: {lat: 55.53, lng: 9.4},
 						center: {lat: latitude_pickup, lng: longitude_pickup},
-						zoom: 9,
+						zoom: 14,
 					  });
 					  var geocoder = new google.maps.Geocoder;
 					
@@ -348,7 +348,7 @@
 											});
 					
 						  var showGeocodedAddressOnMap = function(asDestination) {
-							var icon = asDestination ? destinationIcon : originIcon;
+							//var icon = asDestination ? destinationIcon : originIcon;
 							return function(results, status) {
 							  if (status === google.maps.GeocoderStatus.OK) {
 								/*map.fitBounds(bounds.extend(results[0].geometry.location));*/
@@ -368,6 +368,7 @@
 							  geocoder.geocode({'address': destinationList[j]},
 								  showGeocodedAddressOnMap(true));
 							  outputDiv.innerHTML += '&nbsp;'+ results[j].duration.text  + '<br>&nbsp;' + results[j].distance.text + '';
+							  alert(results[j].duration.text);
 							}
 						  }
 						  
