@@ -107,7 +107,7 @@
    
    
    
-  <div data-role="listpage" id="page1_1">        	
+  <div data-role="page" id="page1_1">        	
         	<div data-role="header">
             	<h1> <a href="#page1" id="back" class="btn-class2"> Back</a></h1>
             </div>
@@ -161,7 +161,7 @@
              </div>
     </div>
     
-     <div data-role="" id="page3">
+     <div data-role="page" id="page3">
 			<div data-role="header">
             	<h1> <a href="#page2" id="back3" class="btn-class2"> Back</a></h1>
             </div>
@@ -208,7 +208,7 @@
 							 $.ajax({
 							 type: 'POST',
 							 dataType: 'json',
-							 url: 'http://192.168.88.141:8888/trackngo/load/app_get_load/'+id_driver,
+							 url: 'http://lean-staffing.com/test_trackngo/load/app_get_load/'+id_driver,
 							
 	                            success: function(data){
 	                                console.log(data);
@@ -257,7 +257,7 @@
                         $.ajax({
                             type: 'POST',
 			    			dataType: 'json',
-                            url: 'http://192.168.88.141:8888/trackngo/load/app_get_load_id/'+ix,
+                            url: 'http://lean-staffing.com/test_trackngo/load/app_get_load_id/'+ix,
 							beforeSend: function(){
 								
 								},
