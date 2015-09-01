@@ -267,9 +267,11 @@
 				//alert(parseFloat(data[ix].dp_long));//-96.8141;//data[0].dp_long;
 				
 				var latitude_pickup = parseFloat(data[0].pk_lat);
+				//var latitude_dec_pickup = ata[0].pk_lat.toFixed(7);
 				var longitude_pickup =parseFloat(data[0].pk_long);
 				var latitude_drop = parseFloat(data[0].dp_lat);
 				var longitude_drop = parseFloat(data[0].dp_long);
+				//alert (data[0].pk_lat);
 				initMap1(latitude_driver, longitude_driver, latitude_pickup, longitude_pickup, latitude_drop, longitude_drop);
 				
 				
