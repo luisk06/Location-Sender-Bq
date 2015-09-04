@@ -45,16 +45,31 @@
 	
 	
 	
-	var pushNotification;
+	
     // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
 
     // device APIs are available
-    //
+    //----Push variable ---
+	var pushNotification;
+	//
     function onDeviceReady() {
 	
 		 navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		
+      
+    }
+
+    // onSuccess Geolocation
+    //
+    function onSuccess(position) {
+  	
+        var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: <input type="text" id="latitude" name="latitude" value="'           + position.coords.latitude              + '" /><br />' +
+                            'Longitude: <input type="text" id="longitude" name="longitude" value="'          + position.coords.longitude             + '" /><br />' ;
+							
+		
 		 /////---------------PUSH NOTIFICATION
 		 
 		 try 
@@ -75,17 +90,8 @@
 				} 
 		 
 		 ////-----------------
-      
-    }
-
-    // onSuccess Geolocation
-    //
-    function onSuccess(position) {
-  	
-        var element = document.getElementById('geolocation');
-        element.innerHTML = 'Latitude: <input type="text" id="latitude" name="latitude" value="'           + position.coords.latitude              + '" /><br />' +
-                            'Longitude: <input type="text" id="longitude" name="longitude" value="'          + position.coords.longitude             + '" /><br />' +
-                            'Altitude: '           + position.coords.altitude              + '<br />';
+		
+		
               
     }
 
