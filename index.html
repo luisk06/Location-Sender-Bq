@@ -208,7 +208,7 @@
 							 $.ajax({
 							 type: 'POST',
 							 dataType: 'json',
-							 url: 'http://lean-staffing.com/test_trackngo/load/app_get_load/'+id_driver,
+							 url: 'http://lean-staffing.com/test_trackngo/load/app_get_load_by_driver/'+id_driver,
 							
 	                            success: function(data){
 	                                console.log(data);
@@ -257,7 +257,7 @@
                         $.ajax({
                             type: 'POST',
 			    			dataType: 'json',
-                            url: 'http://lean-staffing.com/test_trackngo/load/app_get_load_id/'+ix,
+                            url: 'http://lean-staffing.com/test_trackngo/load/app_get_load_view/'+ix,
 							beforeSend: function(){
 								
 								},
@@ -278,7 +278,7 @@
 								$("#origin_text").html("- "+data[0].or_contact+"<br />- "+data[0].or_address_1+"<br />- "+data[0].or_city+", "+data[0].or_state+" <br/>");
 								$("#destination_text").html("- "+data[0].dt_contact+"<br /> - "+data[0].dt_address_1+"<br />- "+data[0].dt_city+", "+data[0].dt_state+" <br/>");
 								$("#header_load").html("Load # :"+data[0].load_number+": "+data[0].customer+" ");
-								$("#item_origin").html(""+data[1].name+"");
+								$("#item_origin").html(""+data[0].items[0].name+"");
                                 //alert('Your location was successfully added');
                             },
                             error: function(data){
