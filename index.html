@@ -226,7 +226,7 @@
 											 	  function onSuccess(position) {
 												  	 var x = position.coords.latitude;
 												     var y = position.coords.longitude;
-												     send_to_db(x,y);
+												     //send_to_db(x,y);
 											 	  }
 											 	   function onError(error) {
 												     /*   alert('code: '    + error.code    + '\n' +
@@ -251,8 +251,8 @@
            function load_details(ix){
 				   location.href = "#page2";
 				   //alert($('#latitude').val());
-                    var latitude_driver = parseFloat($('#latitude').val());//37.55;
-                    var longitude_driver = parseFloat($('#longitude').val());//-77.44;
+                    var latitude_driver = parseFloat(27.9501);//parseFloat($('#latitude').val());//37.55;
+                    var longitude_driver = parseFloat(-82.4501);//parseFloat($('#longitude').val());//-77.44;
 		    		var id_driver = $('#user_name').val();
                         $.ajax({
                             type: 'POST',
@@ -268,10 +268,11 @@
 				
 				var latitude_pickup = parseFloat(data[0].pk_lat);
 				//var latitude_dec_pickup = ata[0].pk_lat.toFixed(7);
-				var longitude_pickup =parseFloat(data[0].pk_long);
+				var longitude_pickup =parseFloat(data[0].pk_lng);
 				var latitude_drop = parseFloat(data[0].dp_lat);
-				var longitude_drop = parseFloat(data[0].dp_long);
+				var longitude_drop = parseFloat(data[0].dp_lng);
 				//alert (data[0].pk_lat);
+				//alert(latitude_driver+"-"+longitude_driver+"-"+latitude_pickup+"-"+longitude_pickup+"-"+latitude_drop+"-"+longitude_drop);
 				initMap1(latitude_driver, longitude_driver, latitude_pickup, longitude_pickup, latitude_drop, longitude_drop);
 				
 				
@@ -293,6 +294,7 @@
           
           <script>
 					function initMap1(latitude_driver, longitude_driver, latitude_pickup, longitude_pickup, latitude_drop, longitude_drop) {
+						
 					  var bounds = new google.maps.LatLngBounds;
 					  var markersArray = [];
 					
@@ -370,7 +372,7 @@
 							  geocoder.geocode({'address': destinationList[j]},
 								  showGeocodedAddressOnMap(true));
 							  outputDiv.innerHTML += '&nbsp;'+ results[j].duration.text  + '<br>&nbsp;' + results[j].distance.text + '';
-							  alert(results[j].duration.text);
+							  //alert(results[j].duration.text);
 							}
 						  }
 						  
